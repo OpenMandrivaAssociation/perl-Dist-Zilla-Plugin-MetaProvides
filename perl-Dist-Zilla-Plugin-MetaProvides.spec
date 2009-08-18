@@ -27,6 +27,7 @@ BuildRequires: perl(Path::Class::Dir)
 BuildRequires: perl(Path::Class::File)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Test::Exception)
+BuildRequires: perl(YAML::Tiny)
 BuildRequires: perl(aliased)
 BuildRequires: perl(namespace::autoclean)
 BuildArch: noarch

@@ -13,6 +13,7 @@ Source0:    http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstre
 
 BuildRequires: perl(Class::Discover)
 BuildRequires: perl(Dist::Zilla)
+BuildRequires: perl(ExtUtils::Manifest) >= 1.560.0
 BuildRequires: perl(File::Find::Rule)
 BuildRequires: perl(File::Find::Rule::Perl)
 BuildRequires: perl(FindBin)

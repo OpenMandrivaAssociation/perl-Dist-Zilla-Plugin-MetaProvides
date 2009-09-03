@@ -1,5 +1,5 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaProvides
-%define upstream_version 1.0920022
+%define upstream_version 1.10000417
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}

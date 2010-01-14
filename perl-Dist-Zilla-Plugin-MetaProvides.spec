@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    In the event nothing else works, pull in hand-crafted metadata from a specified file
 License:    GPL+ or Artistic
@@ -31,8 +31,11 @@ BuildRequires: perl(Test::Exception)
 BuildRequires: perl(YAML::Tiny)
 BuildRequires: perl(aliased)
 BuildRequires: perl(namespace::autoclean)
+
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+
+Requires: perl(aliased)
 
 %description
 This Distribution Contains a small bundle of plugins for various ways of
@@ -47,11 +50,10 @@ so this is here to cover this problem by defining it in the metadata.
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+%make
 
 %check
-%{make} test
+%make test
 
 %install
 rm -rf %buildroot
@@ -65,5 +67,3 @@ rm -rf %buildroot
 %doc Changes LICENSE README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-

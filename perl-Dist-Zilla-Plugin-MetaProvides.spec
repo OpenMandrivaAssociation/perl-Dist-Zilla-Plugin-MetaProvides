@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 3
 
 Summary:    In the event nothing else works, pull in hand-crafted metadata from a specified file
 License:    GPL+ or Artistic
@@ -35,6 +35,8 @@ BuildRequires: perl(namespace::autoclean)
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
+Requires: perl(Module::Extract::Namespaces)
+Requires: perl(Module::Extract::VERSION)
 Requires: perl(aliased)
 
 %description

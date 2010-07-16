@@ -1,9 +1,9 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaProvides
-%define upstream_version 1.10001919
+%define upstream_version 1.10027802
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Release:    %mkrel 1
 
 Summary:    In the event nothing else works, pull in hand-crafted metadata from a specified file
 License:    GPL+ or Artistic
@@ -51,15 +51,15 @@ so this is here to cover this problem by defining it in the metadata.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+%{__perl} Build.PL installdirs=vendor
+./Build
 
 %check
-%make test
+./Build test
 
 %install
-rm -rf %buildroot
-%makeinstall_std
+%{__rm} -rf %{buildroot}
+./Build install destdir=%{buildroot}
 
 %clean
 rm -rf %buildroot

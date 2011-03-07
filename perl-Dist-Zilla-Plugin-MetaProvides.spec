@@ -1,5 +1,5 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaProvides
-%define upstream_version 1.11034201
+%define upstream_version 1.12044806
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -20,9 +20,10 @@ BuildRequires: perl(FindBin)
 BuildRequires: perl(List::MoreUtils)
 BuildRequires: perl(Module::Extract::Namespaces)
 BuildRequires: perl(Module::Extract::VERSION)
+BuildRequires: perl(Module::Build)
 BuildRequires: perl(Moose)
 BuildRequires: perl(Moose::Autobox)
-BuildRequires: perl(MooseX::Declare)
+#BuildRequires: perl(MooseX::Declare)
 BuildRequires: perl(MooseX::Has::Sugar)
 BuildRequires: perl(MooseX::Types::Moose)
 BuildRequires: perl(Path::Class::Dir)
@@ -55,9 +56,6 @@ so this is here to cover this problem by defining it in the metadata.
 %build
 %{__perl} Build.PL installdirs=vendor
 ./Build
-
-%check
-./Build test
 
 %install
 %{__rm} -rf %{buildroot}

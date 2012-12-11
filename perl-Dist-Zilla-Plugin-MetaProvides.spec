@@ -1,42 +1,42 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaProvides
 %define upstream_version 1.12044806
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	5
 
-Summary:    In the event nothing else works, pull in hand-crafted metadata from a specified file
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	When nothing else works, pull in hand-crafted metadata from a specified file
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Class::Discover)
-BuildRequires: perl(Dist::Zilla)
-BuildRequires: perl(ExtUtils::Manifest) >= 1.560.0
-BuildRequires: perl(File::Find::Rule)
-BuildRequires: perl(File::Find::Rule::Perl)
-BuildRequires: perl(FindBin)
-BuildRequires: perl(List::MoreUtils)
-BuildRequires: perl(Module::Extract::Namespaces)
-BuildRequires: perl(Module::Extract::VERSION)
-BuildRequires: perl(Module::Build)
-BuildRequires: perl(Moose)
-BuildRequires: perl(Moose::Autobox)
-#BuildRequires: perl(MooseX::Declare)
-BuildRequires: perl(MooseX::Has::Sugar)
-BuildRequires: perl(MooseX::Types::Moose)
-BuildRequires: perl(Path::Class::Dir)
-BuildRequires: perl(Path::Class::File)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(Test::Exception)
-BuildRequires: perl(Test::Perl::Critic)
-BuildRequires: perl(YAML::Tiny)
-BuildRequires: perl(aliased)
-BuildRequires: perl(namespace::autoclean)
+BuildRequires:	perl-devel
+BuildRequires:	perl(Class::Discover)
+BuildRequires:	perl(Dist::Zilla)
+BuildRequires:	perl(ExtUtils::Manifest) >= 1.560.0
+BuildRequires:	perl(File::Find::Rule)
+BuildRequires:	perl(File::Find::Rule::Perl)
+BuildRequires:	perl(FindBin)
+BuildRequires:	perl(List::MoreUtils)
+BuildRequires:	perl(Module::Extract::Namespaces)
+BuildRequires:	perl(Module::Extract::VERSION)
+BuildRequires:	perl(Module::Build)
+BuildRequires:	perl(Moose)
+BuildRequires:	perl(Moose::Autobox)
+#BuildRequires:	perl(MooseX::Declare)
+BuildRequires:	perl(MooseX::Has::Sugar)
+BuildRequires:	perl(MooseX::Types::Moose)
+BuildRequires:	perl(Path::Class::Dir)
+BuildRequires:	perl(Path::Class::File)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Test::Exception)
+BuildRequires:	perl(Test::Perl::Critic)
+BuildRequires:	perl(YAML::Tiny)
+BuildRequires:	perl(aliased)
+BuildRequires:	perl(namespace::autoclean)
 
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildArch:	noarch
 
 Requires: perl(Module::Extract::Namespaces)
 Requires: perl(Module::Extract::VERSION)
@@ -54,18 +54,14 @@ so this is here to cover this problem by defining it in the metadata.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Build.PL installdirs=vendor
+perl Build.PL installdirs=vendor
 ./Build
 
 %install
-%{__rm} -rf %{buildroot}
 ./Build install destdir=%{buildroot}
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes LICENSE README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+

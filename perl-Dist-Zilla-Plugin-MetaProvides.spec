@@ -55,11 +55,11 @@ so this is here to cover this problem by defining it in the metadata.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-perl Build.PL installdirs=vendor
-./Build
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %install
-./Build install destdir=%{buildroot}
+%makeinstall_std
 
 %files
 %doc Changes LICENSE README

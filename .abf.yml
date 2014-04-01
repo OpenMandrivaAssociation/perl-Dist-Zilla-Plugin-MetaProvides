@@ -1,2 +1,4 @@
+removed_sources:
+  Dist-Zilla-Plugin-MetaProvides-1.12044806.tar.gz: e45b7683acba523c8f5190765a6bace2da39a3bd
 sources:
-  "Dist-Zilla-Plugin-MetaProvides-1.12044806.tar.gz": e45b7683acba523c8f5190765a6bace2da39a3bd
+  Dist-Zilla-Plugin-MetaProvides-2.000000.tar.gz: c516d65add31be97a5f37945f9923bddfbb8a656

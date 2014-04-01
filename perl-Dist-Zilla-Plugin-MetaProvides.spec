@@ -1,11 +1,12 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaProvides
-%define upstream_version 1.12044806
+%define upstream_version 2.000000
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	1
 
 Summary:	When nothing else works, pull in hand-crafted metadata from a specified file
+
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
@@ -64,4 +65,5 @@ perl Build.PL installdirs=vendor
 %doc Changes LICENSE README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
+
 

@@ -1,16 +1,16 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaProvides
-%define upstream_version 2.000000
+%define upstream_version 2.002004
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	When nothing else works, pull in hand-crafted metadata from a specified file
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/kentnl/Dist-Zilla-Plugin-MetaProvides
+Source0:	https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Dist-Zilla-Plugin-MetaProvides-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel

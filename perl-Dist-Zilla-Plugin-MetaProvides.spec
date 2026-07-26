@@ -1,16 +1,14 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaProvides
-%define upstream_version 2.002004
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	2.002004
+Release:	2
 
 Summary:	When nothing else works, pull in hand-crafted metadata from a specified file
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/kentnl/Dist-Zilla-Plugin-MetaProvides
-Source0:	https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Dist-Zilla-Plugin-MetaProvides-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Dist-Zilla-Plugin-MetaProvides-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -53,7 +51,7 @@ manpage style class definitions not being parseable by many tools upstream,
 so this is here to cover this problem by defining it in the metadata.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
